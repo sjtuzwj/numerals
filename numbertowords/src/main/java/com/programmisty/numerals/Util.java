@@ -33,6 +33,7 @@ class Util {
      * @return
      */
     static byte[][] groups(String txt, int groupSize) {
+    	
         int length = txt.length();
         int groupCount = length / groupSize;
         int remainder = length % groupSize;
