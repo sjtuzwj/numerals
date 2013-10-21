@@ -3,9 +3,7 @@ package com.programmisty.numerals;
 import static com.programmisty.numerals.Util.toUpperCaseFirstLetter;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.RoundingMode;
-import java.util.Arrays;
 
 public class Uzbek extends AbstractNumeral {
 	private static final String EDINICHI[] = { "nol", "bir", "ikki", "uch",
