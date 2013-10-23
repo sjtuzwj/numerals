@@ -24,7 +24,7 @@ import java.math.BigInteger;
  */
 public abstract class AbstractNumeral {
 
-    public static BigInteger MAX_SUPPORTED = new BigInteger("1000000000000000000000000000000000000").subtract(BigInteger.ONE);
+    public static final BigInteger MAX_SUPPORTED = new BigInteger("1000000000000000000000000000000000000").subtract(BigInteger.ONE);
     //10^33
     
     protected void checkSupported(Number number) {
