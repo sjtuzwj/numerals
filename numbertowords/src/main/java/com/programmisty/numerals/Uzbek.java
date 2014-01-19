@@ -31,7 +31,7 @@ public class Uzbek extends AbstractNumeral {
 		}
 		StringBuilder sb = new StringBuilder();
 		if (text.startsWith("-")) {
-			sb.append("минус ");
+			sb.append("minus ");
 			text = text.substring(1);
 		}
 
