@@ -11,3 +11,28 @@
  GNU General Public License for more details.
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+========================
+Пока выложил у себя на сайте, как будет время, выложу в центральный репозиторий.
+pom.xml
+
+...
+ <repositories>
+        <repository>
+            <id>programmisty</id>
+            <name>programmisty</name>
+            <url>http://programmisty.com/mvn</url>
+        </repository>
+    </repositories>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.programmisty</groupId>
+            <artifactId>numbertowords</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+ ...
+
