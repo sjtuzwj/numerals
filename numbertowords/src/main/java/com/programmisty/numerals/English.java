@@ -126,7 +126,7 @@ public class English extends AbstractNumeral {
      */
     @Override
      public String amount(BigDecimal bi) {
-        String txt = bi.toPlainString();
+        String txt =  skipSuccZero(bi);
         
         int point = txt.indexOf('.');
         StringBuilder sb = new StringBuilder();
