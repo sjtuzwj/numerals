@@ -105,9 +105,17 @@ public class English extends AbstractNumeral {
                 sb.append(" ");
             }
         }
+        toUpperCaseFirstLetter(sb);
         return sb.toString().trim();
     }
-
+    //show .20 as 2/10 not 20/100
+    public String skipSuccZero(BigDecimal bi){
+        return bi.stripTrailingZeros().toPlainString();
+    }
+    //show .02 as 2/100 not 02/100
+    public String skipPreZero(String bi){
+        return bi.replaceAll("^(0+)", "");
+    }
 
     /**
      * 123.17 One hundred twenty-three and 17/100
@@ -117,7 +125,7 @@ public class English extends AbstractNumeral {
      */
     @Override
      public String amount(BigDecimal bi) {
-        String txt = bi.toPlainString();
+        String txt = skipSuccZero(bi);
         
         int point = txt.indexOf('.');
         StringBuilder sb = new StringBuilder();
@@ -129,16 +137,15 @@ public class English extends AbstractNumeral {
         }
         String celaya = formatImpl(rubli);
         sb.append(celaya);
-        if (point > 0) {
+        if (point > 0 ) {
             sb.append(" and ");
+            kopeyki = skipPreZero(kopeyki);
             sb.append(kopeyki);
             sb.append("/1");
             for (int i=0;i<kopeyki.length();++i) {
                 sb.append("0");
             }
         }
-        //
-        toUpperCaseFirstLetter(sb);
         return sb.toString();
      }
 }
